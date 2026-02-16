@@ -11,12 +11,37 @@
     <div class="header">
         <h1>My Library </h1>
     </div>
+    <div class="form-container">
+        <form action="post">
+            <p>
+                <label for="cover">Cover src</label>
+                <input type="text" id="cover" name="cover">
+            </p>
+            <p>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+            </p>
+            <p>
+                <label for="cover">Description</label>
+                <textarea id="description" name="description"></textarea>
+            </p>
+            <p>
+                <label for="cover">Have you already read this?</label>
+                <input type="checkbox" id="read" name="read">
+            </p>
+            <button>Submit</button>
+        </form>
+    </div>
     <div class="container">
         <div class="card">
             <img src="" alt="">
             <h2>Title</h2>
             <p>Brief Description</p>
             <p> ID: 123456</p>
+            <div class="button-container">
+                <button>Unread</button>
+                <button>Remove</button>
+            </div>
         </div>
         <div class="card">
             <img src="" alt="">
