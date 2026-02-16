@@ -5,3 +5,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    display: grid;
+    position: relative;
+
+    grid-template-rows: auto 1fr 20px;
+}
+
+.header {
+    margin: 1rem;
+    border-bottom: 5px solid black;
+
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.container {
+
+    margin: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; 
+}
+
+.card {
+    
+}
+
+.footer {
+    width: 100%;
+    background-color: rgb(184, 184, 184);
+
+    position: absolute;
+    bottom: 0;
+
+    text-align: center;
+    
+}
