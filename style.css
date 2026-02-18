@@ -11,7 +11,12 @@ body {
     display: grid;
     position: relative;
 
-    grid-template-rows: auto 1fr 20px;
+    grid-template-rows: auto auto 1fr 20px;
+}
+
+button {
+    border-radius: 10%;
+    background-color: rgb(186, 205, 240);
 }
 
 .header {
@@ -24,8 +29,21 @@ body {
 
 }
 
+body > .button-container {
+    justify-self: right;
+    margin: 0 1rem;
+}
+
+body > .button-container button {
+    height: 5vh;
+    width: 10vw;
+    
+    font-size: 1.1rem;
+}
+
 .form-container {
-    /*visibility: hidden; */
+    visibility: hidden; 
+
     border: 2px solid black;
     width: 40vw;
     padding: 1rem;
@@ -55,7 +73,7 @@ body {
 .container {
     margin: 1rem;
 
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: repeat(auto-fit, min-content);
@@ -63,15 +81,50 @@ body {
 }
 
 .card {
+    padding: 1rem 1rem 2rem 1rem;
     border: 1px solid black;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position:relative;
+}
+
+.card img {
+    height: 15rem;
+    width: 10rem;
+}
+
+.card h2 {
+    margin: 1rem 0;
+}
+
+.card p {
+    margin: 1rem 0;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.card .button-container {
+    width: 100%;
+
+    display: flex;
+    justify-content:space-around;
+
+    position: absolute;
+    bottom: 8px;
 }
 
 .footer {
     width: 100%;
     background-color: rgb(184, 184, 184);
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
 
     text-align: center;
