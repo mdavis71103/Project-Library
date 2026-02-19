@@ -1,5 +1,4 @@
 const myLibrary = [];
-const cardContainer = document.getElementsByClassName('container');
 
 function Book(cover, title, description, read, id) {
     this.cover = cover;
@@ -12,25 +11,20 @@ function Book(cover, title, description, read, id) {
 function createCard(book) {
 
     const newCard = document.createElement('div');
-    cardContainer[0].appendChild(newCard);
     newCard.classList.add('card');
 
 
     const cover = document.createElement('img');
     cover.src = book.cover;
-    newCard.appendChild(cover);
     const title = document.createElement('h2')
     title.textContent = book.title;
-    newCard.appendChild(title);
     const description = document.createElement('p')
     description.textContent = book.description;
-    newCard.appendChild(description);
     const id = document.createElement('p')
     id.textContent = `ID: ${book.id}`;
-    newCard.appendChild(id);
 
     const buttonContainer = document.createElement('div');
-    newCard.appendChild(buttonContainer);
+    buttonContainer.classList.add('button-container')
     const readButton = document.createElement('button');
     if(book.read === true){
         readButton.textContent = "Read"
@@ -39,8 +33,9 @@ function createCard(book) {
     deleteButton.textContent = "Delete";
     buttonContainer.append(readButton, deleteButton);
 
-    // newCard.appendChild(cover, title, description, buttonContainer, id);
+    newCard.append(cover, title, description, id, buttonContainer);
 
+    return newCard;
     
 }
 
@@ -60,12 +55,12 @@ function addBookToLibrary(cover, title, description, read) {
 
 function displayBooks() {
     //Creates a card element for each book on the DOM
-    // const cardContainer = document.getElementsByClassName('container');
+    const cardContainer = document.getElementsByClassName('container');
 
 
     myLibrary.forEach((book) => {
         newBook = createCard(book);
-        // cardContainer[0].appendChild(newBook);
+        cardContainer[0].appendChild(newBook);
     })
     
 }
@@ -83,9 +78,33 @@ function seedLibrary(){
     addBookToLibrary(
         "https://upload.wikimedia.org/wikipedia/en/a/ad/Project_Hail_Mary%2C_First_Edition_Cover_%282021%29.jpg",
         "Project Hail Mary",
-        " An amnesiac astronaut, Ryland Grace, who wakes up alone on a spaceship with two dead crewmates and must piece together his mission to save Earth from an extinction-level threat.",
+        "An amnesiac astronaut, Ryland Grace, who wakes up alone on a spaceship with two dead crewmates and must piece together his mission to save Earth from an extinction-level threat.",
         false
     );
+
+    addBookToLibrary(
+        "https://upload.wikimedia.org/wikipedia/en/1/10/The_Cat_in_the_Hat.png",
+        "Cat in the Hat",
+        "A tall, mischievous cat who visits two children on a rainy day, causing chaos with his friends Thing 1 and Thing 2, much to the dismay of the family's fish.",
+        true
+    );
+
+    addBookToLibrary(
+        "https://m.media-amazon.com/images/I/91kBQf9rfqL._UF1000,1000_QL80_.jpg",
+        "The Name of the Wind",
+        "The coming-of-age story of the legendary figure Kvothe through his own first-person narration, detailing his childhood, his time as an orphan, and his entry into a magical university.",
+        false
+    );
+
+    addBookToLibrary(
+        "https://m.media-amazon.com/images/I/81XbhUrUsBL._UF1000,1000_QL80_.jpg",
+        "Dungeon Crawler Carl",
+        "A man and his ex-girlfriend's cat are forced to survive a deadly, intergalactic reality TV show dungeon crawl after Earth is destroyed",
+        false
+    );
+
+
+
 
     console.log("My Library:");
 
