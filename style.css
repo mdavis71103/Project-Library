@@ -4,10 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    --dominant-color: #FEFEFE;
+    --secondary-color: #EDECEC;
+    --accent-color: #B7C396;
+    --card-color: #E0E7D7;
 }
 
 body {
     height: 100vh;
+    background-color: var(--dominant-color);
+
     display: grid;
     position: relative;
 
@@ -16,12 +23,13 @@ body {
 
 button {
     border-radius: 10%;
-    background-color: rgb(186, 205, 240);
+    background-color: var(--secondary-color)
 }
 
 .header {
     margin: 1rem;
-    border-bottom: 5px solid black;
+    padding: 1rem;
+    border-bottom: 5px solid var(--accent-color);
 
 
     display: flex;
@@ -108,8 +116,9 @@ body > .button-container button {
 }
 
 .card {
+    background-color: var(--card-color);
     padding: 1rem 1rem 2rem 1rem;
-    border: 1px solid black;
+    border: 2px solid var(--accent-color);
 
     display: flex;
     flex-direction: column;
@@ -145,6 +154,11 @@ body > .button-container button {
 
     position: absolute;
     bottom: 8px;
+}
+
+.card button {
+    padding: .2rem;
+    font-weight: 550;
 }
 
 .footer {

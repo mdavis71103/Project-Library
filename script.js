@@ -28,9 +28,28 @@ function createCard(book) {
     const readButton = document.createElement('button');
     if(book.read === true){
         readButton.textContent = "Read"
-    } else {readButton.textContent = "Unread"}
+    } else {readButton.textContent = "Unread"};
+
+    readButton.addEventListener('click', 
+        function(event) {
+            if(this.textContent === "Read") {
+                this.textContent = "Unread";
+            }else {this.textContent = "Read"}
+        }
+    );
+
     const deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener('click', 
+        function(event) {
+            if(confirm(
+                "Are you sure you want to remove this book from your library?")) {
+                    console.log(this.parentElement.parentElement.remove());
+            }
+        }
+    )
+
     buttonContainer.append(readButton, deleteButton);
 
     newCard.append(cover, title, description, id, buttonContainer);
@@ -72,9 +91,10 @@ function showForm() {
 }
 
 function hideForm() {
-const addBookForm = document.getElementsByClassName('form-container');
+    const addBookForm = document.getElementsByClassName('form-container');
     addBookForm[0].style.display = "none";
 }
+
 
 function seedLibrary(){
 
@@ -113,16 +133,6 @@ function seedLibrary(){
         "A man and his ex-girlfriend's cat are forced to survive a deadly, intergalactic reality TV show dungeon crawl after Earth is destroyed",
         false
     );
-
-
-
-
-    console.log("My Library:");
-
-    myLibrary.forEach((book) => {
-        console.log(book.title);
-    });
-
 
 }
 
