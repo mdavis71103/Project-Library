@@ -65,6 +65,17 @@ function displayBooks() {
     
 }
 
+function showForm() {
+    const addBookForm = document.getElementsByClassName('form-container');
+    addBookForm[0].style.display = "block";
+
+}
+
+function hideForm() {
+const addBookForm = document.getElementsByClassName('form-container');
+    addBookForm[0].style.display = "none";
+}
+
 function seedLibrary(){
 
     addBookToLibrary(
@@ -119,6 +130,7 @@ function seedLibrary(){
 seedLibrary();
 
 displayBooks();
+
 
 
 
