@@ -100,8 +100,9 @@ function addBookForm() {
 
         const arr = document.getElementsByClassName('addBookFormData');
 
-        addBookToLibrary(arr.cover.value, arr.title.value, arr.description.value, arr.read.value);
+        addBookToLibrary(arr.cover.value, arr.title.value, arr.description.value, arr.read.checked);
         Array.from(arr).forEach(input => input.value = "");
+        arr.read.checked = false;
         hideForm();
     })
 }
