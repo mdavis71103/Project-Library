@@ -51,7 +51,7 @@ body > .button-container button {
 
 .form-container {
     display: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: var(--accent-color);
     border: 2px solid black;
     width: minmax(40vw 500px);
     height: fit-content;
@@ -67,7 +67,9 @@ body > .button-container button {
 
 .form-container #form-close {
     width: 5vw;
-    background-color: inherit;
+    background-color: rgb(224, 58, 58);
+    padding: .2rem;
+    font-weight: 550;
 
     position: fixed;
     top: 0;
@@ -98,7 +100,9 @@ body > .button-container button {
 
 .form-container button {
     margin: 1rem;
-    width: 50px;
+    width: 100px;
+    padding: .2rem;
+    font-weight: 550;
 
     justify-self: center;
     grid-column: 1 / -1;
@@ -107,6 +111,7 @@ body > .button-container button {
 
 .container {
     margin: 1rem;
+    padding-bottom: 10vh;
 
     grid-row: 4 / 5;
     display: grid;

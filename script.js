@@ -59,6 +59,9 @@ function createCard(book) {
 }
 
 function addBookToLibrary(cover, title, description, read) {
+    //Adds new book to library and displays it
+    const cardContainer = document.getElementsByClassName('container');
+
     var Id = crypto.randomUUID();
     let newBook = new Book(
         cover,
@@ -70,19 +73,11 @@ function addBookToLibrary(cover, title, description, read) {
 
     myLibrary.push(newBook);
 
+    const bookCard = createCard(newBook);
+    cardContainer[0].appendChild(bookCard);
+
 }
 
-function displayBooks() {
-    //Creates a card element for each book on the DOM
-    const cardContainer = document.getElementsByClassName('container');
-
-
-    myLibrary.forEach((book) => {
-        newBook = createCard(book);
-        cardContainer[0].appendChild(newBook);
-    })
-    
-}
 
 function showForm() {
     const addBookForm = document.getElementsByClassName('form-container');
@@ -95,6 +90,23 @@ function hideForm() {
     addBookForm[0].style.display = "none";
 }
 
+function addBookForm() {
+    const addBookForm = document.getElementById("addBookForm");
+    let bookInfo = []
+
+
+    addBookForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const arr = document.getElementsByClassName('addBookFormData');
+
+        addBookToLibrary(arr.cover.value, arr.title.value, arr.description.value, arr.read.value);
+    })
+}
+
+function clearAddBookForm () {
+
+}
 
 function seedLibrary(){
 
@@ -139,7 +151,7 @@ function seedLibrary(){
 
 seedLibrary();
 
-displayBooks();
+addBookForm();
 
 
 

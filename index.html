@@ -24,23 +24,23 @@
         <p>Project by: Mike D. </p>
     </div>
 
-    
+
     <div class="form-container">
         <button id="form-close" onclick="hideForm()">x</button>
         <h2>Add New Book</h2>
-        <form action="post">
+        <form action="post" id="addBookForm" onsubmit="clearAddBookForm()">
             <div class="form-contents">
                 <label for="cover">Cover src</label>
-                <input type="text" id="cover" name="cover">
+                <input type="text" class="addBookFormData" id="cover" name="cover">
             
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title">
+                <input type="text" class="addBookFormData" id="title" name="title">
             
                 <label for="cover">Description</label>
-                <textarea id="description" name="description"></textarea>
+                <textarea id="description" class="addBookFormData" name="description"></textarea>
             
                 <label for="cover">I've already read this</label>
-                <input type="checkbox" id="read" name="read" value="true">
+                <input type="checkbox" class="addBookFormData" id="read" name="read" value="true">
             
                 <button>Submit</button>
             </div>
