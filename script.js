@@ -101,11 +101,9 @@ function addBookForm() {
         const arr = document.getElementsByClassName('addBookFormData');
 
         addBookToLibrary(arr.cover.value, arr.title.value, arr.description.value, arr.read.value);
+        Array.from(arr).forEach(input => input.value = "");
+        hideForm();
     })
-}
-
-function clearAddBookForm () {
-
 }
 
 function seedLibrary(){
