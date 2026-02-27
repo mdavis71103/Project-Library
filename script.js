@@ -1,11 +1,13 @@
 const myLibrary = [];
 
-function Book(cover, title, description, read, id) {
-    this.cover = cover;
-    this.title = title;
-    this.description = description;
-    this.read = read;
-    this.id = id;
+class Book {
+    constructor(cover, title, description, read, id) {
+        this.cover = cover;
+        this.title = title;
+        this.description = description;
+        this.read = read;
+        this.id = id;
+    }
 }
 
 function createCard(book) {
